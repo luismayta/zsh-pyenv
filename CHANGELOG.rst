@@ -8,7 +8,11 @@ This file uses change log convention from `keep a CHANGELOG`_.
 `Unreleased`_
 +++++++++++++
 
-.. _`Unreleased`: https://github.com/luismayta/zsh-pyenv/compare/0.0.0...HEAD
+`0.1.0`_ - 2018-12-30
+++++++++++++++++++++++
+
+.. _`Unreleased`: https://github.com/luismayta/zsh-pyenv/compare/0.1.0...HEAD
+.. _`0.1.0`: https://github.com/luismayta/zsh-pyenv/compare/0.0.0...0.1.0
 .. _0.0.0: https://gitlab.com/luismayta/zsh-pyenv/compare/0.0.0...0.0.0
 
 .. _`keep a CHANGELOG`: http://keepachangelog.com/en/0.0.0/
