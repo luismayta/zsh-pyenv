@@ -12,12 +12,22 @@ function install_pyenv {
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 }
 
+function _init_pyenv {
+    unset -f pyenv _init_pyenv
+    if [[ ! "$PATH" == */.pyenv/bin* ]]; then
+        export PATH="$HOME/.pyenv/bin:$PATH"
+    fi
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+}
+
+function pyenv {
+    _init_pyenv
+    pyenv "$@"
+}
+
 function load_pyenv {
     [[ -e "$HOME/.pyenv/bin" ]] && export PATH="$PATH:$HOME/.pyenv/bin"
-    if [ -e "$HOME/.pyenv" ]; then
-        eval "$(pyenv init -)"
-        eval "$(pyenv virtualenv-init -)"
-    fi
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 }
 
