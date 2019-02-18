@@ -1,5 +1,5 @@
 -   repo: https://github.com/pre-commit/pre-commit-hooks.git
-    sha: v1.4.0
+    sha: v2.1.0
     hooks:
     -   id: detect-private-key
         files: ^(?!\.?git-crypt)
@@ -49,18 +49,18 @@
         - --exclude=docs,migrations
     -   id: check-executables-have-shebangs
 -   repo: https://github.com/pre-commit/pre-commit.git
-    sha: v1.10.5
+    sha: v1.14.3
     hooks:
     -   id: validate_manifest
 -   repo: https://github.com/detailyang/pre-commit-shell.git
-    sha: 1.0.2
+    sha: 1.0.4
     hooks:
     -   id: shell-lint
         exclude: ^extras/script/wait-for-it.sh$
         args:
         - --exclude=SC1072,SC1073,SC2068
 -   repo: https://github.com/asottile/add-trailing-comma
-    sha: v0.6.4
+    sha: v0.7.2
     hooks:
     -   id: add-trailing-comma
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
@@ -91,10 +91,8 @@
     hooks:
     -   id: isort
         exclude: __pycache__|migrations|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
-        args:
-        - --settings-path=.isort.cfg
 -   repo: https://github.com/pre-commit/mirrors-pylint.git
-    sha: v2.1.1
+    sha: v2.3.0.dev1
     hooks:
     -   id: pylint
         exclude: __pycache__|migrations|conf.py|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
@@ -102,9 +100,11 @@
         - --rcfile=.pylintrc
         - --disable=no-name-in-module,import-error,ungrouped-imports
         - --ignore=settings_test, migrations
+        language_version: python3
 -   repo: https://github.com/luismayta/pre-commit-mypy.git
     sha: 0.1.1
     hooks:
     -   id: mypy
         args:
         - --ignore-missing-imports
+        language_version: python3

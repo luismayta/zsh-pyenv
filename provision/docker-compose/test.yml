@@ -6,10 +6,9 @@
 version: "3"
 services:
   app:
-    image: zsh-pyenv-app-test:0.1.0
+    image: zsh-pyenv-app-test
     environment: &environment
       - STAGE=testing
     build:
       args:
         stage: test
-        version: 0.1.0
