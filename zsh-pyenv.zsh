@@ -8,12 +8,15 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-function install_pyenv {
+function pyenv::install {
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+    pyenv::load
+    pyenv install 3.6.4
+    pyenv global 3.6.4
 }
 
-function _init_pyenv {
-    unset -f pyenv _init_pyenv
+function pyenv::init {
+    unset -f pyenv pyenv::init
     if [[ ! "$PATH" == */.pyenv/bin* ]]; then
         export PATH="$HOME/.pyenv/bin:$PATH"
     fi
@@ -22,17 +25,17 @@ function _init_pyenv {
 }
 
 function pyenv {
-    _init_pyenv
+    pyenv::init
     pyenv "$@"
 }
 
-function load_pyenv {
+function pyenv::load {
     [[ -e "$HOME/.pyenv/bin" ]] && export PATH="$PATH:$HOME/.pyenv/bin"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 }
 
-load_pyenv
+pyenv::load
 
 if (( ! $+commands[pyenv] )); then
-    install_pyenv
+    pyenv::install
 fi
