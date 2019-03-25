@@ -24,7 +24,7 @@ PATH_DOCKER_COMPOSE:=provision/docker-compose
 pip_install := pip install -r
 docker-compose:=docker-compose -f docker-compose.yml
 
-include extras/make/*.mk
+include provision/make/*.mk
 
 help:
 	@echo '${MESSAGE} Makefile for ${PROJECT}'
