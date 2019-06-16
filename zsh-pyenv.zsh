@@ -30,6 +30,7 @@ function pyenv {
 }
 
 function pyenv::load {
+    [[ -e "$HOME/.pyenv" ]] && export PYENV_ROOT="$HOME/.pyenv"
     [[ -e "$HOME/.pyenv/bin" ]] && export PATH="$PATH:$HOME/.pyenv/bin"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 }
