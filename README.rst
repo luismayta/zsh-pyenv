@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv?ref=badge_shield)
+
 zsh-pyenv
 =========
 
@@ -177,3 +179,6 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _Python 3.6.4: https://www.python.org/downloads/release/python-364
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose/
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv?ref=badge_large)
