@@ -1,5 +1,3 @@
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv?ref=badge_shield)
-
 zsh-pyenv
 =========
 
@@ -99,7 +97,7 @@ Team
 +---------------+
 | |Luis Mayta|  |
 +---------------+
-| `luis mayta`_ |
+| `Luis Mayta`_ |
 +---------------+
 
 License
@@ -142,10 +140,11 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. Links
 .. _`changelog`: CHANGELOG.rst
 .. _`contributors`: AUTHORS
-.. _`contributing`: CONTRIBUTING.rst
+.. _`contributing`: docs/source/CONTRIBUTING.rst
 
 .. _`hadenlabs`: https://github.com/hadenlabs
 .. _`luis mayta`: https://github.com/luismayta
+
 
 .. _`Github`: https://github.com/luismayta
 .. _`Linkedin`: https://www.linkedin.com/in/luismayta
@@ -176,9 +175,6 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 
 .. Dependences:
 
-.. _Python 3.6.4: https://www.python.org/downloads/release/python-364
+.. _Pyenv: https://github.com/pyenv/pyenv
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose/
-
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-pyenv?ref=badge_large)
