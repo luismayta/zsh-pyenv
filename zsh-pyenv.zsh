@@ -8,11 +8,26 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
+LIGHT_GREEN='\033[1;32m'
+CLEAR='\033[0m'
+
+function pyenv::dependences {
+    echo -e "${CLEAR}${LIGHT_GREEN}Installing Dependences${CLEAR}"
+}
+
 function pyenv::install {
+    pyenv::dependences
+    echo -e "${CLEAR}${LIGHT_GREEN} Install pyenv ${CLEAR}"
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-    pyenv::load
-    pyenv install 3.6.4
-    pyenv global 3.6.4
+    pyenv install 3.7.4
+    pyenv install 3.8.0
+    pyenv global 3.7.4
+    pyenv::post_install
+}
+
+function pyenv::post_install {
+    echo -e "${CLEAR}${LIGHT_GREEN} Post Install for Pyenv ${CLEAR}"
+    pip install pipenv mypy autopep8 flake8 elpy jedi rope isort epc importmagic yapf pylint cookiecutter
 }
 
 function pyenv::init {
@@ -37,6 +52,6 @@ function pyenv::load {
 
 pyenv::load
 
-if (( ! $+commands[pyenv] )); then
+if [[ ! -x "$(command which pyenv)" ]]; then
     pyenv::install
 fi
