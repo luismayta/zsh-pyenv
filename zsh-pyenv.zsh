@@ -30,24 +30,12 @@ function pyenv::post_install {
     pip install pipenv mypy autopep8 flake8 elpy jedi rope isort epc importmagic yapf pylint cookiecutter
 }
 
-function pyenv::init {
-    unset -f pyenv pyenv::init
-    if [[ ! "$PATH" == */.pyenv/bin* ]]; then
-        export PATH="$HOME/.pyenv/bin:$PATH"
-    fi
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-}
-
-function pyenv {
-    pyenv::init
-    pyenv "$@"
-}
-
 function pyenv::load {
     [[ -e "$HOME/.pyenv" ]] && export PYENV_ROOT="$HOME/.pyenv"
     [[ -e "$HOME/.pyenv/bin" ]] && export PATH="$PATH:$HOME/.pyenv/bin"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 }
 
 pyenv::load
