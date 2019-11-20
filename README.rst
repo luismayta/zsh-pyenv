@@ -5,8 +5,8 @@ zsh-pyenv
 
 :Version: 0.2.0
 :Web: https://github.com/luismayta/zsh-pyenv
-:Download: http://github.com/luismayta/zsh-pyenv
-:Source: http://github.com/luismayta/zsh-pyenv
+:Download: https://github.com/luismayta/zsh-pyenv
+:Source: https://github.com/luismayta/zsh-pyenv
 :Keywords: zsh-pyenv
 
 .. contents:: Table of Contents:
