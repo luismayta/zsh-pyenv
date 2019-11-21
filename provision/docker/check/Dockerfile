@@ -3,7 +3,6 @@ FROM python:3.8.0-slim
 MAINTAINER Luis Mayta <@slovacus>
 
 ARG stage
-ARG version
 LABEL NAME zsh-pyenv-check-$stage
 
 COPY Pipfile* /usr/src/
