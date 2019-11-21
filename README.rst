@@ -20,7 +20,11 @@ Features
 Dependencies
 ------------
 
-List of applications:
+.. code-block:: bash
+
+    https://github.com/mafredri/zsh-async
+    https://github.com/marzocchi/zsh-notify
+    https://github.com/luismayta/zsh-functions
 
 Installation
 ------------
@@ -60,8 +64,13 @@ install this plugin by doing the following:
 If you're using `Antigen <https://github.com/getantibody/antibody>`__,
 install this plugin by doing the following:
 
-1. Add ``antibody bundle luismayta/zsh-pyenv`` to your
-   ``.zshrc`` where you're adding your other plugins.
+1. Add :
+
+    .. code-block:: bash
+
+        antibody bundle luismayta/zsh-pyenv
+
+    to your ``.zshrc`` where you're adding your other plugins.
 2. Either open a new terminal to force zsh to load the new plugin, or
    run ``antibody bundle luismayta/zsh-pyenv`` in a
    running zsh session.
