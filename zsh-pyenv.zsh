@@ -14,6 +14,7 @@ plugin_dir=$(dirname "${0}":A)
 
 # shellcheck source=/dev/null
 source "${plugin_dir}"/src/helpers/messages.zsh
+
 # shellcheck source=/dev/null
 source "${plugin_dir}"/src/helpers/tools.zsh
 
@@ -27,7 +28,7 @@ function pyenv::install {
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
     pyenv install 3.7.4
     pyenv install 3.8.0
-    pyenv global 3.7.4
+    pyenv global 3.8.0
     message_success "Installed ${package_name}"
     pyenv::post_install
 }
@@ -42,9 +43,8 @@ function pyenv::post_install {
 }
 
 function pyenv::load {
-    PATH=$(get_path)
-    [ -e "$HOME/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
-    [ -e "$HOME/.pyenv/bin" ] && export PATH="$PATH:$HOME/.pyenv/bin"
+    [ -e "${HOME}/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
+    path::append "${HOME}/.pyenv/bin"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
