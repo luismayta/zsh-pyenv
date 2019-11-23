@@ -8,38 +8,38 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-package_name=pyenv
+pyenv_package_name=pyenv
 
-plugin_dir=$(dirname "${0}":A)
-
-# shellcheck source=/dev/null
-source "${plugin_dir}"/src/helpers/messages.zsh
+ZSH_PYENV_ROOT=$(dirname "${0}":A)
 
 # shellcheck source=/dev/null
-source "${plugin_dir}"/src/helpers/tools.zsh
+source "${ZSH_PYENV_ROOT}"/src/helpers/messages.zsh
+
+# shellcheck source=/dev/null
+source "${ZSH_PYENV_ROOT}"/src/helpers/tools.zsh
 
 function pyenv::dependences {
-    message_info "Installing Dependences ${package_name}"
+    message_info "Installing Dependences ${pyenv_package_name}"
 }
 
 function pyenv::install {
     pyenv::dependences
-    message_info "Installing ${package_name}"
+    message_info "Installing ${pyenv_package_name}"
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
     pyenv install 3.7.4
     pyenv install 3.8.0
     pyenv global 3.8.0
-    message_success "Installed ${package_name}"
+    message_success "Installed ${pyenv_package_name}"
     pyenv::post_install
 }
 
 function pyenv::post_install {
-    message_info "Installing other tools for ${package_name}"
+    message_info "Installing other tools for ${pyenv_package_name}"
     pip install --user pipenv mypy autopep8 \
         flake8 elpy jedi rope \
         isort epc importmagic \
         yapf pylint cookiecutter
-    message_success "Success install other tools for ${package_name}"
+    message_success "Success install other tools for ${pyenv_package_name}"
 }
 
 function pyenv::load {
