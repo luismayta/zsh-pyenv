@@ -18,6 +18,17 @@ source "${ZSH_PYENV_ROOT}"/src/helpers/messages.zsh
 # shellcheck source=/dev/null
 source "${ZSH_PYENV_ROOT}"/src/helpers/tools.zsh
 
+function curl::install {
+    message_info "Installing curl for ${pyenv_package_name}"
+    if ! type -p brew > /dev/null; then
+        message_error "it's neccesary brew, add: luismayta/zsh-brew"
+    fi
+    brew install curl
+    message_success "Installed curl for ${pyenv_package_name}"
+}
+
+if ! type -p curl > /dev/null; then curl::install; fi
+
 function pyenv::dependences {
     message_info "Installing Dependences ${pyenv_package_name}"
 }
@@ -52,6 +63,4 @@ function pyenv::load {
 
 pyenv::load
 
-if [ ! -x "$(command which pyenv)" ]; then
-    pyenv::install
-fi
+if ! type -p pyenv > /dev/null; then pyenv::install; fi
