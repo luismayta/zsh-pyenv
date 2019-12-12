@@ -10,14 +10,6 @@
 
 pyenv_package_name=pyenv
 
-ZSH_PYENV_ROOT=$(dirname "${0}":A)
-
-# shellcheck source=/dev/null
-source "${ZSH_PYENV_ROOT}"/src/helpers/messages.zsh
-
-# shellcheck source=/dev/null
-source "${ZSH_PYENV_ROOT}"/src/helpers/tools.zsh
-
 function curl::install {
     message_info "Installing curl for ${pyenv_package_name}"
     if ! type -p brew > /dev/null; then
@@ -55,7 +47,7 @@ function pyenv::post_install {
 
 function pyenv::load {
     [ -e "${HOME}/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
-    path::append "${HOME}/.pyenv/bin"
+    path_append "${HOME}/.pyenv/bin"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
