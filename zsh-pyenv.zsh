@@ -9,6 +9,8 @@
 #
 
 pyenv_package_name=pyenv
+PYENV_ROOT="${HOME}/.pyenv"
+
 
 function curl::install {
     message_info "Installing curl for ${pyenv_package_name}"
@@ -23,6 +25,12 @@ if ! type -p curl > /dev/null; then curl::install; fi
 
 function pyenv::dependences {
     message_info "Installing Dependences ${pyenv_package_name}"
+}
+
+function pyenv::upgrade {
+    message_info "Upgrade ${pyenv_package_name}"
+    cd "${PYENV_ROOT}" || exit && git pull && cd - || return
+    message_success "Upgraded ${pyenv_package_name}"
 }
 
 function pyenv::install {
