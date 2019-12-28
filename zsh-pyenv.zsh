@@ -39,6 +39,7 @@ function pyenv::install {
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
     pyenv install 3.7.4
     pyenv install 3.8.0
+    pyenv install 3.8.1
     pyenv global 3.8.0
     message_success "Installed ${pyenv_package_name}"
     pyenv::post_install
@@ -46,6 +47,7 @@ function pyenv::install {
 
 function pyenv::post_install {
     message_info "Installing other tools for ${pyenv_package_name}"
+    pip install --user --upgrade pip
     pip install --user pipenv mypy autopep8 \
         flake8 elpy jedi rope \
         isort epc importmagic \
