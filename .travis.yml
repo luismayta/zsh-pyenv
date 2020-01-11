@@ -24,8 +24,8 @@ before_install:
 
 # install dependences
 install:
-  - pip install -r requirements/setup.txt
+  - make setup
 
 # execute test
 script:
-  - make test
+  - make test.lint
