@@ -37,21 +37,37 @@ function pyenv::install {
     pyenv::dependences
     message_info "Installing ${pyenv_package_name}"
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-    pyenv install 3.7.4
-    pyenv install 3.8.0
-    pyenv install 3.8.1
-    pyenv global 3.8.0
     message_success "Installed ${pyenv_package_name}"
     pyenv::post_install
 }
 
-function pyenv::post_install {
-    message_info "Installing other tools for ${pyenv_package_name}"
+function pyenv::install::versions {
+    message_info "Installing versions for ${pyenv_package_name}"
+    if ! type -p pyenv > /dev/null; then
+        message_warning "not found pyenv, please install pyenv"
+        return
+    fi
+    pyenv install 3.7.4
+    pyenv install 3.8.0
+    pyenv install 3.8.1
+    pyenv global 3.8.0
+    message_success "Installed versions for ${pyenv_package_name}"
+}
+
+function pyenv::install::packages {
+    message_info "Installing packages for ${pyenv_package_name}"
     pip install --user --upgrade pip
     pip install --user pipenv mypy autopep8 \
         flake8 elpy jedi rope \
         isort epc importmagic \
         yapf pylint cookiecutter
+    message_success "Installed packages for ${pyenv_package_name}"
+}
+
+function pyenv::post_install {
+    message_info "Installing other tools for ${pyenv_package_name}"
+    pyenv::install::versions
+    pyenv::install::packages
     message_success "Success install other tools for ${pyenv_package_name}"
 }
 
