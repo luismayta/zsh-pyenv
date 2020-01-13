@@ -7,6 +7,7 @@
 # Authors:
 #   Luis Mayta <slovacus@gmail.com>
 #
+# shellcheck source=/dev/null
 [ -e "${HOME}/.zsh-async/async.zsh" ] && source "${HOME}/.zsh-async/async.zsh"
 
 pyenv_package_name=pyenv
@@ -63,7 +64,7 @@ function pyenv::install::versions::async {
 }
 
 function pyenv::install::versions::factory {
-    if which async_init > /dev/null; then
+    if command -v async_init > /dev/null; then
         pyenv::install::versions::async
         return
     fi
