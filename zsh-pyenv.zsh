@@ -7,6 +7,7 @@
 # Authors:
 #   Luis Mayta <slovacus@gmail.com>
 #
+[ -e "${HOME}/.zsh-async/async.zsh" ] && source "${HOME}/.zsh-async/async.zsh"
 
 pyenv_package_name=pyenv
 PYENV_ROOT="${HOME}/.pyenv"
@@ -49,6 +50,31 @@ function pyenv::install::version::global {
 
 }
 
+function pyenv::install::versions::async {
+    async_init
+    # Start a worker that will report job completion
+    async_start_worker pyenv_worker_install_version -u
+
+    # Register our callback function to run when the job completes
+    async_register_callback pyenv_worker_install_version pyenv::install::version::callback
+
+    # Start the job
+    async_job pyenv_worker_install_version pyenv::install::versions
+}
+
+function pyenv::install::versions::factory {
+    if which async_init > /dev/null; then
+        pyenv::install::versions::async
+        return
+    fi
+    pyenv::install::versions
+}
+
+# Define a function to process the result of the job
+function pyenv::install::version::callback {
+    message_success "Finish:: ${1}"
+}
+
 function pyenv::install::versions {
     message_info "Installing versions for ${pyenv_package_name}"
     if ! type -p pyenv > /dev/null; then
@@ -75,8 +101,9 @@ function pyenv::install::packages {
 
 function pyenv::post_install {
     message_info "Installing other tools for ${pyenv_package_name}"
-    pyenv::install::versions
+    pyenv::install::version::global
     pyenv::install::packages
+    pyenv::install::versions::factory
     message_success "Success install other tools for ${pyenv_package_name}"
 }
 
