@@ -41,18 +41,25 @@ function pyenv::install {
     pyenv::post_install
 }
 
+function pyenv::install::version::global {
+    message_info "Installing version gloabal for ${pyenv_package_name}"
+    pyenv install -f 3.8.0
+    pyenv global 3.8.0
+    message_success "Installed version global for ${pyenv_package_name}"
+
+}
+
 function pyenv::install::versions {
     message_info "Installing versions for ${pyenv_package_name}"
     if ! type -p pyenv > /dev/null; then
         message_warning "not found pyenv, please install pyenv"
         return
     fi
-    pyenv install 3.7.4
-    pyenv install 3.8.0
-    pyenv install 3.8.1
-    pyenv install anaconda3-5.3.1
-    pyenv install miniconda3-4.3.30
-    pyenv global 3.8.0
+    pyenv install -f 3.6.6
+    pyenv install -f 3.7.4
+    pyenv install -f 3.8.1
+    pyenv install -f anaconda3-5.3.1
+    pyenv install -f miniconda3-4.3.30
     message_success "Installed versions for ${pyenv_package_name}"
 }
 
