@@ -50,6 +50,8 @@ function pyenv::install::versions {
     pyenv install 3.7.4
     pyenv install 3.8.0
     pyenv install 3.8.1
+    pyenv install anaconda3-5.3.1
+    pyenv install miniconda3-4.3.30
     pyenv global 3.8.0
     message_success "Installed versions for ${pyenv_package_name}"
 }
