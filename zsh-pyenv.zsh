@@ -110,7 +110,7 @@ function pyenv::post_install {
 
 function pyenv::load {
     [ -e "${HOME}/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
-    path_append "${HOME}/.pyenv/bin"
+    [ -e "${HOME}/.pyenv/bin" ] && export PATH="${PATH}:${HOME}/.pyenv/bin"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
