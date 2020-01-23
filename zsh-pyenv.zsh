@@ -40,6 +40,7 @@ function pyenv::install {
     message_info "Installing ${pyenv_package_name}"
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
     message_success "Installed ${pyenv_package_name}"
+    pyenv::load
     pyenv::post_install
 }
 
@@ -92,11 +93,11 @@ function pyenv::install::versions {
 
 function pyenv::install::packages {
     message_info "Installing packages for ${pyenv_package_name}"
-    pip install --user --upgrade pip
-    pip install --user pipenv mypy autopep8 \
+    python -m pip install --user --upgrade pip
+    python -m pip install --user pipenv mypy autopep8 \
         flake8 elpy jedi rope \
         isort epc importmagic \
-        yapf pylint cookiecutter
+        yapf pylint cookiecutter wakatime
     message_success "Installed packages for ${pyenv_package_name}"
 }
 
