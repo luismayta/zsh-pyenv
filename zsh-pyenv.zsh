@@ -13,11 +13,29 @@
 pyenv_package_name=pyenv
 PYENV_ROOT="${HOME}/.pyenv"
 
+# shellcheck disable=SC2034  # Unused variables left for readability
+PYENV_ROOT_DIR=$(dirname "$0")
+PYENV_SRC_DIR="${PYENV_ROOT_DIR}"
+PYENV_VERSIONS=(
+    3.6.6
+    3.7.4
+    anaconda3-5.3.1
+    miniconda3-4.3.30
+    3.8.0
+    3.8.5
+)
+PYENV_VERSION_GLOBAL=3.8.0
+
+# shellcheck source=/dev/null
+source "${PYENV_SRC_DIR}"/core/base.zsh
+
+# shellcheck source=/dev/null
+source "${PYENV_SRC_DIR}"/core/packages.zsh
 
 function curl::install {
     message_info "Installing curl for ${pyenv_package_name}"
     if ! type -p brew > /dev/null; then
-        message_error "it's neccesary brew, add: luismayta/zsh-brew"
+        message_warning "it's neccesary brew, add: luismayta/zsh-brew"
     fi
     brew install curl
     message_success "Installed curl for ${pyenv_package_name}"
@@ -42,14 +60,6 @@ function pyenv::install {
     message_success "Installed ${pyenv_package_name}"
     pyenv::load
     pyenv::post_install
-}
-
-function pyenv::install::version::global {
-    message_info "Installing version gloabal for ${pyenv_package_name}"
-    pyenv install -f 3.8.0
-    pyenv global 3.8.0
-    message_success "Installed version global for ${pyenv_package_name}"
-
 }
 
 function pyenv::install::versions::async {
@@ -77,35 +87,24 @@ function pyenv::install::version::callback {
     message_success "Finish:: ${1}"
 }
 
-function pyenv::install::versions {
-    message_info "Installing versions for ${pyenv_package_name}"
+function pyenv::post_install::versions {
+    pyenv::load
     if ! type -p pyenv > /dev/null; then
-        message_warning "not found pyenv, please install pyenv"
+        message_warning "not found pyenv"
         return
     fi
-    pyenv install -f 3.6.6
-    pyenv install -f 3.7.4
-    pyenv install -f 3.8.1
-    pyenv install -f anaconda3-5.3.1
-    pyenv install -f miniconda3-4.3.30
-    message_success "Installed versions for ${pyenv_package_name}"
-}
-
-function pyenv::install::packages {
-    message_info "Installing packages for ${pyenv_package_name}"
-    python -m pip install --user --upgrade pip
-    python -m pip install --user pipenv mypy autopep8 \
-        flake8 elpy jedi rope \
-        isort epc importmagic \
-        yapf pylint cookiecutter wakatime
-    message_success "Installed packages for ${pyenv_package_name}"
+    message_info "Install versions of pyenv"
+    for version in "${PYENV_VERSIONS[@]}"; do
+        pyenv install "${version}"
+    done
+    pyenv global "${PYENV_VERSION_GLOBAL}"
+    message_success "Installed versions of pyenv"
 }
 
 function pyenv::post_install {
     message_info "Installing other tools for ${pyenv_package_name}"
-    pyenv::install::version::global
-    pyenv::install::packages
     pyenv::install::versions::factory
+    pyenv::install::packages
     message_success "Success install other tools for ${pyenv_package_name}"
 }
 
@@ -113,8 +112,11 @@ function pyenv::load {
     [ -e "${HOME}/.pyenv" ] && export PYENV_ROOT="$HOME/.pyenv"
     [ -e "${HOME}/.pyenv/bin" ] && export PATH="${PATH}:${HOME}/.pyenv/bin"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+
+    if type -p pyenv > /dev/null; then
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
+    fi
 }
 
 pyenv::load
