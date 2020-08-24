@@ -1,6 +1,4 @@
-FROM python:3.8.0-slim
-
-MAINTAINER Luis Mayta <@slovacus>
+FROM equipindustry/python:3.8.0-slim
 
 ARG stage
 LABEL NAME zsh-pyenv-check-$stage
