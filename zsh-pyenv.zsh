@@ -104,7 +104,7 @@ function pyenv::post_install::versions {
 function pyenv::post_install {
     message_info "Installing other tools for ${pyenv_package_name}"
     pyenv::install::versions::factory
-    pyenv::install::packages
+    pyenv::packages::install
     message_success "Success install other tools for ${pyenv_package_name}"
 }
 
