@@ -3,6 +3,7 @@
 #
 
 OS := $(shell uname)
+
 .PHONY: help
 .DEFAULT_GOAL := help
 
@@ -71,9 +72,9 @@ setup:
 	@echo "=====> install packages..."
 	make python.setup
 	make python.precommit
-	make yarn.setup
 	@cp -rf provision/git/hooks/prepare-commit-msg .git/hooks/
 	@[ -e ".env" ] || cp -rf .env.example .env
+	make yarn.setup
 	@echo ${MESSAGE_HAPPY}
 
 environment:
