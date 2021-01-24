@@ -1,6 +1,8 @@
 zsh-pyenv
 =========
 
+python install and tools for zsh
+
 |Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.2.0
@@ -145,14 +147,14 @@ Feel free to contact me to discuss any issues, questions, or comments.
 
 |linkedin| |beacon| |made|
 
-Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
+Made with :coffee: and :pizza: by `Luis Mayta`_ and `hadenlabs`_.
 
 .. Links
 .. _`changelog`: CHANGELOG.rst
 .. _`contributors`: docs/source/AUTHORS.rst
 .. _`contributing`: docs/source/CONTRIBUTING.rst
 
-.. _`equipindustry`: https://github.com/equipindustry
+.. _`hadenlabs`: https://github.com/hadenlabs
 .. _`Luis Mayta`: https://github.com/luismayta
 
 
