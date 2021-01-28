@@ -12,7 +12,6 @@ docs.help:
 	@echo '        docs.serve                  server Make documentation'
 	@echo ''
 
-
 docs.build:
 	$(PIPENV_RUN) mkdocs build
 
