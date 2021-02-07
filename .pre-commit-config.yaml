@@ -55,7 +55,6 @@ repos:
         args:
           - --exclude=SC1072,SC1073,SC2068
       - id: validate-toml
-      - id: todocheck
       - id: gitleaks
         args:
           - --path=.
