@@ -20,6 +20,12 @@ yarn.setup:
 	yarn install
 	@echo ${MESSAGE_HAPPY}
 
+.PHONY: yarn.environment
+yarn.environment:
+	@echo "=====> enviroment yarn..."
+	nvm use ${NODE_VERSION}
+	@echo ${MESSAGE_HAPPY}
+
 yarn.install:
 	$(docker-yarn-run) yarn install
 

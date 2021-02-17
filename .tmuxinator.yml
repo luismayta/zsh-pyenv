@@ -36,15 +36,16 @@ on_project_start: make environment
 startup_window: docker
 
 windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - editor:
+        - pwd:
+        - pwd:
   - python:
       layout: main-vertical
       panes:
         - ipython:
-  - cloud:
-      layout: main-vertical
-      panes:
-        - cloud:
-        - databases:
   - docker:
       layout: main-vertical
       panes:
