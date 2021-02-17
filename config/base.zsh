@@ -7,7 +7,6 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_MESSAGE_BREW="Please install brew or use antibody bundle luismayta/zsh-brew branch:develop"
 export PYENV_PACKAGE_NAME=pyenv
 export PYENV_VERSIONS=(
-    3.6.6
     3.7.4
     anaconda3-5.3.1
     miniconda3-4.3.30
