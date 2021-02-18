@@ -18,3 +18,5 @@ export PYENV_VERSION_GLOBAL=3.8.0
 export PYENV_MODULES=(
     lastversion
 )
+
+export ZSH_PYENV_LAZY_VIRTUALENV=true
