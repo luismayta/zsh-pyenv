@@ -8,11 +8,19 @@ function pyenv::internal::pyenv::install {
 }
 
 function pyenv::internal::pyenv::load {
-    [ -e "${PYENV_ROOT_BIN}" ] && export PATH="${PATH}:${PYENV_ROOT_BIN}"
+    [ -e "${PYENV_ROOT_BIN}" ] && export PATH="${PYENV_ROOT_BIN}:${PATH}"
 
+    # Lazy load pyenv
     if type -p pyenv > /dev/null; then
-        eval "$(pyenv init -)"
-        eval "$(pyenv virtualenv-init -)"
+        export PATH="${PYENV_ROOT}/shims:${PATH}"
+        function pyenv {
+            unset -f pyenv
+            eval "$(command pyenv init -)"
+            if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
+                eval "$(command pyenv virtualenv-init -)"
+            fi
+            pyenv $@
+        }
     fi
 }
 
