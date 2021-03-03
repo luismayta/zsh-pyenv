@@ -17,6 +17,8 @@ export PYENV_VERSIONS=(
 export PYENV_VERSION_GLOBAL=3.8.0
 export PYENV_MODULES=(
     lastversion
+    ansible
+    ansible-lint
 )
 
 export ZSH_PYENV_LAZY_VIRTUALENV=true
