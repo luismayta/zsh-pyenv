@@ -71,7 +71,9 @@ to your `.zshrc` where you're adding your other plugins.
 ## Usage
 
 ```bash
-make setup
+
+  make setup
+
 ```
 
 ## Help
