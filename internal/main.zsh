@@ -17,8 +17,7 @@ function pyenv::internal::main::factory {
 }
 
 pyenv::internal::main::factory
-
-if ! type -p curl > /dev/null; then pyenv::internal::curl::install; fi
-if ! type -p pyenv > /dev/null; then pyenv::internal::pyenv::install; fi
-
 pyenv::internal::pyenv::load
+
+if ! core::exists curl; then core::install curl; fi
+if ! core::exists pyenv; then pyenv::internal::pyenv::install; fi
