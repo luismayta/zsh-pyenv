@@ -20,6 +20,7 @@ export PYENV_MODULES=(
     ansible
     ansible-lint
     checkov
+    pip
 )
 
 export ZSH_PYENV_LAZY_VIRTUALENV=true
