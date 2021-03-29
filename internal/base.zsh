@@ -58,9 +58,6 @@ function pyenv::internal::modules::install {
     fi
 
     message_info "Installing required python modules"
-    python -m pip install --user --upgrade pip
-    for module in "${PYENV_MODULES[@]}"; do
-        python -m pip install --user --upgrade "${module}"
-    done
+    python -m pip install --user --upgrade "${PYENV_MODULES[@]}"
     message_success "Installed required python modules"
 }
