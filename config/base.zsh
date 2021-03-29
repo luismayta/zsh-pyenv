@@ -19,6 +19,7 @@ export PYENV_MODULES=(
     lastversion
     ansible
     ansible-lint
+    checkov
 )
 
 export ZSH_PYENV_LAZY_VIRTUALENV=true
