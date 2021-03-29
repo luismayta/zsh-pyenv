@@ -7,18 +7,6 @@
 # Name of this project
 name: zsh-pyenv
 
-company:
-  name: hadenlabs
-  description: |-
-    company labs
-  url: https://hadenlabs.com
-  github: https://github.com/hadenlabs
-  email: support@hadenlabs.com
-
-copyright:
-  name: Hadenlabs
-  url: https://hadenlabs.com
-
 email:
   support: support@hadenlabs.com
 
@@ -33,15 +21,15 @@ github_repo: luismayta/zsh-pyenv
 
 # Badges to display
 badges:
-  - name: 'Build Status'
-    image: 'https://travis-ci.org/luismayta/zsh-pyenv.svg?branch=main'
-    url: 'https://travis-ci.org/luismayta/zsh-pyenv'
-  - name: 'Issues'
-    image: 'https://img.shields.io/github/issues/luismayta/zsh-pyenv.svg'
-    url: 'https://github.com/luismayta/zsh-pyenv/issues'
-  - name: 'Latest Release'
-    image: 'https://img.shields.io/github/release/luismayta/zsh-pyenv.svg'
-    url: 'https://travis-ci.org/luismayta/zsh-pyenv/releases'
+  - name: Lint
+    image: https://github.com/luismayta/zsh-pyenv/actions/workflows/lint.yml/badge.svg?branch=develop
+    url: https://github.com/luismayta/zsh-pyenv/actions
+  - name: Issues
+    image: https://img.shields.io/github/issues/luismayta/zsh-pyenv.svg
+    url: https://github.com/luismayta/zsh-pyenv/issues
+  - name: Latest Release
+    image: https://img.shields.io/github/release/luismayta/zsh-pyenv.svg
+    url: https://github.com/luismayta/zsh-pyenv/releases
 
 # Short description of this project
 description: |-
@@ -51,26 +39,15 @@ requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  ```{.sourceCode .bash}
-  https://github.com/luismayta/zsh-core
-  https://github.com/luismayta/zsh-notify
-  https://github.com/luismayta/zsh-functions
-  ```
+  * [zsh-core](https://github.com/hadenlabs/zsh-core)
+
+usage: |
+
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
   - 'docs/include/installation/antigen.md'
   - 'docs/include/installation/antibody.md'
 
-# How to use this project
-usage: |-
-  ```bash
-
-    make setup
-
-  ```
-
-# Contributors to this project
-contributors:
-  - name: 'Luis Mayta'
-    github: 'luismayta'
+include:
+  - 'docs/functions.md'
