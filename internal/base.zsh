@@ -25,7 +25,7 @@ function pyenv::internal::pyenv::load {
 }
 
 function pyenv::internal::version::all::install {
-    if ! type -p pyenv > /dev/null; then
+    if ! core::exists pyenv; then
         message_warning "not found pyenv"
         return
     fi
@@ -41,7 +41,7 @@ function pyenv::internal::version::all::install {
 }
 
 function pyenv::internal::version::global::install {
-    if ! type -p pyenv > /dev/null; then
+    if ! core::exists pyenv; then
         message_warning "not found pyenv"
         return
     fi
@@ -51,17 +51,8 @@ function pyenv::internal::version::global::install {
     message_success "Installed version global of python ${PYENV_VERSION_GLOBAL}"
 }
 
-function pyenv::internal::curl::install {
-    message_info "Installing curl for ${PYENV_PACKAGE_NAME}"
-    if ! type -p brew > /dev/null; then
-        message_warning "${PYENV_MESSAGE_BREW}"
-    fi
-    brew install curl
-    message_success "Installed curl for ${PYENV_PACKAGE_NAME}"
-}
-
 function pyenv::internal::modules::install {
-    if ! type -p python > /dev/null; then
+    if ! core::exists python; then
         message_warning "it's neccesary have python"
         return
     fi

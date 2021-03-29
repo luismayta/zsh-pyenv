@@ -14,7 +14,6 @@ function pyenv::pkg::main::factory {
         source "${ZSH_PYENV_PATH}"/pkg/linux.zsh
       ;;
     esac
-
     # shellcheck source=/dev/null
     source "${ZSH_PYENV_PATH}"/pkg/helper.zsh
 
