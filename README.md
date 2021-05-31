@@ -12,9 +12,9 @@
 
   -->
 
-# zsh-pyenv
+[![GitHub release](https://img.shields.io/github/release/luismayta/zsh-pyenv?style=flat-square)](https://github.com/luismayta/zsh-pyenv/releases/latest) [![Lint](https://img.shields.io/github/workflow/status/luismayta/zsh-pyenv/lint-code)](https://github.com/luismayta/zsh-pyenv/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
-[![Lint](https://github.com/luismayta/zsh-pyenv/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/luismayta/zsh-pyenv/actions) [![Issues](https://img.shields.io/github/issues/luismayta/zsh-pyenv.svg)](https://github.com/luismayta/zsh-pyenv/issues) [![Latest Release](https://img.shields.io/github/release/luismayta/zsh-pyenv.svg)](https://github.com/luismayta/zsh-pyenv/releases)
+# zsh-pyenv
 
 zsh-pyenv plugin for zsh.
 
@@ -37,7 +37,7 @@ If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install t
 
 ### [antigen](https://github.com/zsh-users/antigen) users
 
-If you're using [Antigen](https://github.com/zsh-lovers/antigen), install this plugin by doing the following:
+If you're using [Antigen](https://github.com/zsh-users/antigen), install this plugin by doing the following:
 
 1.  Add `antigen bundle luismayta/zsh-pyenv` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle luismayta/zsh-pyenv` in a running zsh session.
@@ -76,7 +76,7 @@ Install pyenv
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/luismayta/zsh-pyenv/issues), send us an [email](email) or join our [Slack Community](slack).
+File a GitHub [issue](https://github.com/luismayta/zsh-pyenv/issues).
 
 ## Contributing
 
@@ -96,9 +96,20 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
 
-#### Versioning
+## Module Versioning
 
-Releases are managed using github release feature. We use [Semantic Versioning](http://semver.org) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+This Module follows the principles of [Semantic Versioning (SemVer)](https://semver.org/).
+
+Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following constructs:
+
+1. Use the `MAJOR` version for incompatible changes.
+1. Use the `MINOR` version when adding functionality in a backwards compatible manner.
+1. Use the `PATCH` version when introducing backwards compatible bug fixes.
+
+### Backwards compatibility in `0.0.z` and `0.y.z` version
+
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is increased. (Pre-release)
 
 ## Copyright
 
