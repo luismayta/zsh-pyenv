@@ -5,7 +5,7 @@
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "LGPL-3.0",
   "engines": {
-    "node": ">=v14.20.0"
+    "node": ">=14"
   },
   "scripts": {
     "build": "tsc -p ./",
@@ -14,8 +14,8 @@
     "clean:build": "yarn clean dist .next out .serverless_nextjs",
     "clean:build:all": "yarn clean && yarn clean:build && yarn clean:build:test",
     "clean:build:test": "yarn clean ./coverage",
-    "clean:build:tool": "yarn clean ./build/tools",
     "clean:cache": "yarn clean ./node_modules/.cache",
+    "plop": "cross-env TS_NODE_PROJECT='./provision/generators/plop/ts-node.tsconfig.json' plop --plopfile provision/generators/plop/index.ts",
     "lint": "eslint --config=.github/linters/.eslintrc.js --ignore-path=.github/linters/.eslintignore ./ --ext .js,.jsx,.mjs,.d.ts,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:less": "stylelint --config=.github/linters/.stylintrc --syntax less **/*.less",
@@ -24,9 +24,9 @@
     "ncu:patch": "ncu -u --target patch",
     "prebuild": "mkdirp build && yarn run clean:build:all",
     "precommit": "lint-staged",
-    "prettier": "prettier --config=.github/linters/prettier.config.js --ignore-path=.github/linters/.prettierignore --list-different",
-    "prettier:fix": "yarn prettier:lint --write=true",
-    "prettier:lint": "yarn prettier '**/*.{js?(on),ts?(x),scss,md,y?(a)ml,gql,graphql?(s),less,mjml}' --write=false"
+    "prettier": "prettier '**/*.{js?(on),ts?(x),scss,md,y?(a)ml,gql,graphql?(s),less,mjml}' --config=.github/linters/prettier.config.js --ignore-path=.github/linters/.prettierignore --list-different",
+    "prettier:fix": "yarn prettier --write=true",
+    "prettier:lint": "yarn prettier --write=false"
   },
   "publishConfig": {
     "access": "public",
@@ -43,8 +43,9 @@
     "url": "git+https://github.com/luismayta/zsh-pyenv.git"
   },
   "keywords": [
-    "zsh-pyenv",
+    "commitlint",
     "git",
+    "commits",
     "hadenlabs"
   ],
   "bugs": {
@@ -53,25 +54,29 @@
   "homepage": "https://github.com/luismayta/zsh-pyenv#readme",
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
+    "@commitlint/cli": "^12.1.4",
     "@hadenlabs/commitlint-config": "^0.1.0",
-    "@types/rimraf": "^3.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
-    "@typescript-eslint/parser": "^5.38.0",
+    "@types/rimraf": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "@types/handlebars-helpers": "^0.5.2",
     "cross-env": "^7.0.3",
-    "eslint": "^8.23.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.0.1",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
     "husky": "^6.0.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "prettier-eslint": "^15.0.1",
-    "slugify": "^1.6.5",
+    "handlebars-helpers": "^0.10.0",
+    "lint-staged": "^11.0.0",
+    "node-plop": "^0.26.2",
+    "plop": "^2.7.4",
+    "prettier": "^2.3.0",
+    "prettier-eslint": "^12.0.0",
+    "slugify": "^1.5.3",
     "rimraf": "^3.0.2",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.3"
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
   },
   "prettier": "./.github/linters/prettier.config.js"
 }
