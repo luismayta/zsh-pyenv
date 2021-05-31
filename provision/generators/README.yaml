@@ -21,15 +21,21 @@ github_repo: luismayta/zsh-pyenv
 
 # Badges to display
 badges:
+  - name: GitHub release
+    image: https://img.shields.io/github/release/luismayta/zsh-pyenv?style=flat-square
+    url: https://github.com/luismayta/zsh-pyenv/releases/latest
   - name: Lint
-    image: https://github.com/luismayta/zsh-pyenv/actions/workflows/lint.yml/badge.svg?branch=develop
-    url: https://github.com/luismayta/zsh-pyenv/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/luismayta/zsh-pyenv.svg
-    url: https://github.com/luismayta/zsh-pyenv/issues
-  - name: Latest Release
-    image: https://img.shields.io/github/release/luismayta/zsh-pyenv.svg
-    url: https://github.com/luismayta/zsh-pyenv/releases
+    image: https://img.shields.io/github/workflow/status/luismayta/zsh-pyenv/lint-code
+    url: https://github.com/luismayta/zsh-pyenv/actions?workflow=lint-code
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
 
 # Short description of this project
 description: |-
@@ -42,7 +48,6 @@ requirements: |-
   * [zsh-core](https://github.com/hadenlabs/zsh-core)
 
 usage: |
-
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
