@@ -26,6 +26,21 @@ title = "gitleaks config"
     tags = ["key", "AWS", "MWS"]
 
 [[rules]]
+  description = "Facebook Secret Key"
+  regex = '''(?i)(facebook|fb)(.{0,20})?(?-i)['\"][0-9a-f]{32}['\"]'''
+  tags = ["key", "Facebook"]
+
+[[rules]]
+  description = "Facebook Client ID"
+  regex = '''(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}['\"]'''
+  tags = ["key", "Facebook"]
+
+[[rules]]
+  description = "Facebook access token"
+  regex = '''EAACEdEose0cBA[0-9A-Za-z]+'''
+  tags = ["key", "Facebook"]
+
+[[rules]]
     description = "Twitter Secret Key"
     regex = '''(?i)twitter(.{0,20})?['\"][0-9a-z]{35,44}['\"]'''
     tags = ["key", "Twitter"]
@@ -65,6 +80,21 @@ title = "gitleaks config"
     description = "Google API key"
     regex = '''AIza[0-9A-Za-z\\-_]{35}'''
     tags = ["key", "Google"]
+
+[[rules]]
+  description = "Google Cloud Platform API key"
+  regex = '''(?i)(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z\\-_]{35}]['\"]'''
+  tags = ["key", "Google", "GCP"]
+
+[[rules]]
+  description = "Google OAuth"
+  regex = '''(?i)(google|gcp|auth)(.{0,20})?['"][0-9]+-[0-9a-z_]{32}\.apps\.googleusercontent\.com['"]'''
+  tags = ["key", "Google", "OAuth"]
+
+[[rules]]
+  description = "Google OAuth access token"
+  regex = '''ya29\.[0-9A-Za-z\-_]+'''
+  tags = ["key", "Google", "OAuth"]
 
 [[rules]]
     description = "Heroku API key"
@@ -115,6 +145,12 @@ title = "gitleaks config"
     description = "Twilio API key"
     regex = '''(?i)twilio(.{0,20})?['\"][0-9a-f]{32}['\"]'''
     tags = ["key", "twilio"]
+
+[[rules]]
+  description = "Password in URL"
+  regex = '''[a-zA-Z]{3,10}:\/\/[^\/\s:@]{3,20}:[^\/\s:@]{3,20}@.{1,100}\/?.?'''
+  tags = ["key", "URL", "generic"]
+
 
 [[rules]]
     description = "Env Var"
@@ -171,6 +207,15 @@ title = "gitleaks config"
     tags = ["key", "API", "generic"]
 
 [[rules]]
+  description = "Generic API Key"
+  regex = '''[a|A][p|P][i|I][_]?[k|K][e|E][y|Y].*['|\"][0-9a-zA-Z]{32,45}['|\"]'''
+
+[[rules]]
+  description = "Generic Secret"
+  regex = '''[s|S][e|E][c|C][r|R][e|E][t|T].*['|\"][0-9a-zA-Z]{32,45}['|\"]'''
+
+
+[[rules]]
     description = "Files with keys and credentials"
     file = '''(?i)(id_rsa|passwd|id_rsa.pub|pgpass)$'''
     tags = ["key", "files"]
@@ -182,16 +227,18 @@ title = "gitleaks config"
 
 # Global allowlist
 [allowlist]
-    description = "files allowlists"
+  description = "Whitelisted files"
     files = [
       '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
       '''^\.gitignore$''',
       '''^\.gitleaks.toml$''',
       '''^yarn.lock$''',
+      '''^vendor/(.*?)$''',
+      '''^node_modules/(.*?)$''',
     ]
 
 [whitelist]
-	description = "Ignore"
+  description = "image and html allowlists"
 	files = [
     '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
     '''^\.gitleaks.toml$''',
