@@ -23,6 +23,10 @@ function pyenv::modules::install {
     pyenv::internal::modules::install
 }
 
+function pyenv::module::install {
+    pyenv::internal::module::install "${@}"
+}
+
 function pyenv::post_install {
     pyenv::install::version::global::install
 }
