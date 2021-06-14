@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.0.0
+    rev: v2.1.0
     hooks:
       - id: codespell
         args: [--ignore-words=.codespell-ignores]
@@ -15,12 +15,11 @@ repos:
     hooks:
       - id: detect-private-key
         files: ^(?!\.?git-crypt)
-        exclude: .github/linters/.gitleaks.toml
+        exclude: >
+          (?x)^(
+            .+\.gitleaks.toml$|
+          )$
       - id: check-merge-conflict
-      - id: trailing-whitespace
-        files: ^tf|-|\.(py|tfvars|tf|tfenv|env|yml|yaml|pem|key|mock)$
-      - id: end-of-file-fixer
-        files: ^tf|-|\.(py|env|yml|yaml|pem|key|mock)$
       - id: check-added-large-files
         files: ^tf|-|\.(py|env|yml|yaml)$
       - id: check-case-conflict
