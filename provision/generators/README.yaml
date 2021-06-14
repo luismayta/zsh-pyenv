@@ -14,22 +14,22 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'MIT'
+license: 'LGPL-3.0'
 
 # Canonical GitHub repo
 github_repo: luismayta/zsh-pyenv
 
 # Badges to display
 badges:
-  - name: GitHub release
-    image: https://img.shields.io/github/release/luismayta/zsh-pyenv?style=flat-square
-    url: https://github.com/luismayta/zsh-pyenv/releases/latest
+  - name: Latest Release
+    image: https://img.shields.io/github/release/luismayta/zsh-pyenv
+    url: https://github.com/luismayta/zsh-pyenv/releases
   - name: Lint
     image: https://img.shields.io/github/workflow/status/luismayta/zsh-pyenv/lint-code
-    url: https://github.com/luismayta/zsh-pyenv/actions?workflow=lint-code
-  - name: pre-commit
-    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-    url: https://github.com/pre-commit/pre-commit
+    url: https://github.com/luismayta/zsh-pyenv/actions
+  - name: Issues
+    image: https://img.shields.io/github/issues/luismayta/zsh-pyenv
+    url: https://github.com/luismayta/zsh-pyenv/issues
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
@@ -46,8 +46,6 @@ requirements: |-
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
   * [zsh-core](https://github.com/hadenlabs/zsh-core)
-
-usage: |
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
