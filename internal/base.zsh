@@ -31,12 +31,12 @@ function pyenv::internal::version::all::install {
     fi
 
     for version in "${PYENV_VERSIONS[@]}"; do
-        message_info "Install version of go ${version}"
+        message_info "Install version of python ${version}"
         pyenv install "${version}"
-        message_success "Installed version of go ${version}"
+        message_success "Installed version of python ${version}"
     done
     pyenv global "${PYENV_VERSION_GLOBAL}"
-    message_success "Installed versions of Go"
+    message_success "Installed versions of Python"
 
 }
 
@@ -51,9 +51,18 @@ function pyenv::internal::version::global::install {
     message_success "Installed version global of python ${PYENV_VERSION_GLOBAL}"
 }
 
+function pyenv::internal::module::install {
+    if ! core::exists python; then
+        message_warning "it's necessary have python"
+        return
+    fi
+
+    python -m pip install --user --upgrade "${@}"
+}
+
 function pyenv::internal::modules::install {
     if ! core::exists python; then
-        message_warning "it's neccesary have python"
+        message_warning "it's necessary have python"
         return
     fi
 
