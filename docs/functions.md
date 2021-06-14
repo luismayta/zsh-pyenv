@@ -9,3 +9,7 @@ Synchronizes and install configurations.
 #### `pyenv::install`
 
 Install pyenv
+
+#### `pyenv::module::install` `name module`
+
+Install module using python now version
