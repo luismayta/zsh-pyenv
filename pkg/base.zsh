@@ -28,7 +28,8 @@ function pyenv::module::install {
 }
 
 function pyenv::post_install {
-    pyenv::install::version::global::install
+    pyenv::version::global::install
+    pyenv::modules::install
 }
 
 function pyenv::load {
