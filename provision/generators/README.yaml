@@ -26,15 +26,15 @@ badges:
     url: https://github.com/luismayta/zsh-pyenv/releases
   - name: Lint
     image: https://img.shields.io/github/workflow/status/luismayta/zsh-pyenv/lint-code
-    url: https://github.com/luismayta/zsh-pyenv/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/luismayta/zsh-pyenv
-    url: https://github.com/luismayta/zsh-pyenv/issues
+    url: https://github.com/luismayta/zsh-pyenv/actions?workflow=lint-code
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
   - name: KeepAChangelog
-    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    image: https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange
     url: https://keepachangelog.com
 
 # Short description of this project
@@ -52,5 +52,11 @@ installation:
   - 'docs/include/installation/antigen.md'
   - 'docs/include/installation/antibody.md'
 
+usages:
+  - docs/usage.md
+
 include:
   - 'docs/functions.md'
+
+examples:
+  - 'docs/examples/common.md'

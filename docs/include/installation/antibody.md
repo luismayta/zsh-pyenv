@@ -1,3 +1,12 @@
+<!-- Space: Projects -->
+<!-- Parent: Project -->
+<!-- Title: Installation Antibody ZshPyenv -->
+<!-- Label: ZshPyenv -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 ### [antibody](https://github.com/getantibody/antibody) users
 
 If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
@@ -5,7 +14,7 @@ If you're using [Antibody](https://github.com/getantibody/antibody), install thi
 1.  Add :
 
 ```{.sourceCode .bash}
-     antibody bundle luismayta/zsh-pyenv
+antibody bundle luismayta/zsh-pyenv
 ```
 
 to your `.zshrc` where you're adding your other plugins.
