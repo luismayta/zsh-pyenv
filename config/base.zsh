@@ -21,6 +21,7 @@ export PYENV_MODULES=(
     ansible-lint
     checkov
     pip
+    pyright
     opencv-python
 )
 
