@@ -13,14 +13,6 @@ function pyenv::internal::pyenv::load {
     # Lazy load pyenv
     if type -p pyenv > /dev/null; then
         export PATH="${PYENV_ROOT}/shims:${PATH}"
-        function pyenv {
-            unset -f pyenv
-            eval "$(command pyenv init -)"
-            if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
-                eval "$(command pyenv virtualenv-init -)"
-            fi
-            pyenv $@
-        }
     fi
 }
 
