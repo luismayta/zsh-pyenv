@@ -94,6 +94,13 @@ tasks:
     cmds:
       - task: prettier:all
 
+  upgrade:
+    run: once
+    desc: Execute upgrade packages
+    cmds:
+      - >-
+        pipenv run pre-commit autoupdate
+
   setup:
     desc: Setup dependences of project
     cmds:
