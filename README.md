@@ -27,7 +27,7 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 ## Installation
 
 <!-- Space: Projects -->
-<!-- Parent: Project -->
+<!-- Parent: ZshPyenv -->
 <!-- Title: Installation Oh-My-Zsh ZshPyenv -->
 <!-- Label: ZshPyenv -->
 <!-- Label: Project -->
@@ -45,7 +45,7 @@ If you're using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), install this pl
 3.  Edit your `.zshrc` and add `plugins=( ... zsh-pyenv )` to your list of plugins
 4.  Open a new terminal and enjoy!
     <!-- Space: Projects -->
-    <!-- Parent: Project -->
+    <!-- Parent: ZshPyenv -->
     <!-- Title: Installation Antigen ZshPyenv -->
     <!-- Label: ZshPyenv -->
     <!-- Label: Project -->
@@ -62,7 +62,7 @@ If you're using [Antigen](https://github.com/zsh-users/antigen), install this pl
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle luismayta/zsh-pyenv` in a running zsh session.
 3.  Enjoy!
     <!-- Space: Projects -->
-    <!-- Parent: Project -->
+    <!-- Parent: ZshPyenv -->
     <!-- Title: Installation Antibody ZshPyenv -->
     <!-- Label: ZshPyenv -->
     <!-- Label: Project -->
@@ -102,13 +102,13 @@ task setup
 <!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
-### common
+### Common
 
  <!-- Space: Projects -->
-<!-- Parent: Project -->
-<!-- Title: Functions -->
+<!-- Parent: ZshPyenv -->
+<!-- Title: Functions ZshPyenv -->
 <!-- Label: Functions -->
-<!-- Include: docs/disclaimer.md -->
+<!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
 ## Functions
@@ -154,7 +154,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2022 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2023 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 

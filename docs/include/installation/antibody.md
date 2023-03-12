@@ -1,5 +1,5 @@
 <!-- Space: Projects -->
-<!-- Parent: Project -->
+<!-- Parent: ZshPyenv -->
 <!-- Title: Installation Antibody ZshPyenv -->
 <!-- Label: ZshPyenv -->
 <!-- Label: Project -->
