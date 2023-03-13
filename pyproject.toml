@@ -31,16 +31,13 @@ black = "*"
 [tool.poetry.extras]
 docs = ["mkdocs", "mkdocs-material"]
 
-[tool.poetry_bumpversion.file."pyproject.toml"]
-
 [tool.poetry_bumpversion.file."package.json"]
-replace = '"version" = "{new_version}"'
-search = '"version" = "{current_version}"'
+search = '"version": "{current_version}"'
+replace = '"version": "{new_version}"'
 
 [tool.poetry_bumpversion.file."sonar-project.properties"]
-replace = 'sonar.projectVersion = "{new_version}"'
-search = 'sonar.projectVersion = "{current_version}"'
-
+search = 'sonar.projectVersion={current_version}'
+replace = 'sonar.projectVersion={new_version}'
 [tool.black]
 line-length = 120
 
@@ -51,7 +48,7 @@ skips = ["B101"]
 profile = "black"
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.11"
 files = ["."]
 show_error_codes = true
 pretty = true
