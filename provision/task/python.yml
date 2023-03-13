@@ -17,7 +17,7 @@ tasks:
         msg: "Please Install python"
 
   check:poetry:
-    desc: Exist Pipenv
+    desc: Exist Poetry
     run: once
     preconditions:
       - sh: command -v poetry
@@ -57,7 +57,7 @@ tasks:
     desc: Generate environment python.
     run: once
     cmds:
-      - poetry --venv || poetry install --skip-lock
+      - poetry env info || poetry install
     deps:
       - task: check:python
       - task: check:poetry
