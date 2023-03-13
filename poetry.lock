@@ -382,24 +382,24 @@ crt = ["awscrt (==0.16.9)"]
 
 [[package]]
 name = "bridgecrew"
-version = "2.3.79"
+version = "2.3.85"
 description = "Infrastructure as code static analysis"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "bridgecrew-2.3.79-py3-none-any.whl", hash = "sha256:21084b9a716775be30995d4f40026bd4c96e30d19bb3d94d8eebe45ccb5e2ea0"},
-    {file = "bridgecrew-2.3.79.tar.gz", hash = "sha256:52759cd75a06590f64a42bed9f23afa100c95c0a7b1a693f0a1f86282b8d475a"},
+    {file = "bridgecrew-2.3.85-py3-none-any.whl", hash = "sha256:d7166e025b2b61c2a5e8c3caae56ba03acb53f27c5570996062d289e6bcce581"},
+    {file = "bridgecrew-2.3.85.tar.gz", hash = "sha256:680a8ebc58cda3eb7ad917ebe151b69f5038f4bc8965d4ac97921d49a0c3435c"},
 ]
 
 [package.dependencies]
 bc-python-hcl2 = ">=0.3.10"
-checkov = ">=2.3.79"
+checkov = ">=2.3.85"
 jschema-to-python = ">=1.2.3"
 sarif-om = ">=1.0.4"
 
 [package.extras]
-dev = ["bc-python-hcl2 (>=0.3.10)", "checkov (>=2.3.79)", "jschema-to-python (>=1.2.3)", "sarif-om (>=1.0.4)"]
+dev = ["bc-python-hcl2 (>=0.3.10)", "checkov (>=2.3.85)", "jschema-to-python (>=1.2.3)", "sarif-om (>=1.0.4)"]
 
 [[package]]
 name = "cached-property"
@@ -613,14 +613,14 @@ files = [
 
 [[package]]
 name = "checkov"
-version = "2.3.79"
+version = "2.3.85"
 description = "Infrastructure as code static analysis"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "checkov-2.3.79-py3-none-any.whl", hash = "sha256:55097758f8111fb166b10b83015776aabf9bf724e2bb25b3b1c85294a1c2262a"},
-    {file = "checkov-2.3.79.tar.gz", hash = "sha256:f984deeef68607a96b4233331aa25c5d42b4dabb558d27ad1d0ad59c70f4cb71"},
+    {file = "checkov-2.3.85-py3-none-any.whl", hash = "sha256:3419d22ce93c660624fea881aa523c0af531c56f73f528d4112d51a0688a603b"},
+    {file = "checkov-2.3.85.tar.gz", hash = "sha256:3cf6fe2f522e9d92d13643e7292e66070cb6024073c94746dee86d85bb7fded3"},
 ]
 
 [package.dependencies]
