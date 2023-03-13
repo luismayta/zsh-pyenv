@@ -8,10 +8,10 @@ export PYENV_PACKAGE_NAME=pyenv
 export PYENV_VERSIONS=(
     anaconda3-5.3.1
     miniconda3-4.3.30
-    3.10.4
     3.10.6
+    3.11.2
 )
-export PYENV_VERSION_GLOBAL=3.10.6
+export PYENV_VERSION_GLOBAL=3.11.2
 export PYENV_MODULES=(
     lastversion
     ansible
@@ -24,7 +24,7 @@ export PYENV_MODULES=(
     pylint
     beautysh
     poetry
-    poetry-poetry-migrate
+    pipenv-poetry-migrate
 )
 
 export ZSH_PYENV_LAZY_VIRTUALENV=true
