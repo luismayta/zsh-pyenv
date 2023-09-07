@@ -1,9 +1,12 @@
 name: confluence
 
 on:
-  push:
+  workflow_run:
+    workflows:
+      - lint-code
+    types:
+      - completed
     branches:
-      - develop
       - main
 
     tags:

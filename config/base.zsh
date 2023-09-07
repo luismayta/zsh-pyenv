@@ -25,6 +25,9 @@ export PYENV_MODULES=(
     beautysh
     poetry
     pipenv-poetry-migrate
+    jupyterlab
+    notebook
+    voila
 )
 
 export ZSH_PYENV_LAZY_VIRTUALENV=true

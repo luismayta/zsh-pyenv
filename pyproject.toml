@@ -8,6 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8,<3.12"
+boto3 = "^1.26.130"
 
 [tool.poetry.group.dev.dependencies]
 requests = "^2.28.2"
@@ -38,6 +39,7 @@ replace = '"version": "{new_version}"'
 [tool.poetry_bumpversion.file."sonar-project.properties"]
 search = 'sonar.projectVersion={current_version}'
 replace = 'sonar.projectVersion={new_version}'
+
 [tool.black]
 line-length = 120
 
