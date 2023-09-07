@@ -37,15 +37,18 @@ badges:
     image: https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange
     url: https://keepachangelog.com
 
-# Short description of this project
-description: |-
-  zsh-pyenv plugin for zsh.
-
 requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  * [zsh-core](https://github.com/hadenlabs/zsh-core)
+  - [zsh-core](https://github.com/hadenlabs/zsh-core)
+  - [gomplate](https://github.com/hairyhenderson/gomplate)
+  - [python](https://www.python.org)
+  - [taskfile](https://github.com/go-task/task)
+
+# Short description of this project
+description: |-
+  zsh-pyenv plugin for zsh.
 
 installation:
   - "docs/include/installation/oh-my-zsh.md"

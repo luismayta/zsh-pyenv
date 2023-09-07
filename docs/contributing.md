@@ -12,7 +12,7 @@ Contributions to zsh-pyenv are welcome.
 
 Feel free to use all of the contribution options:
 
-- Contribute to zsh-pyenv repositories on [GitHub](https://github.com/luismayta/zsh-pyenv). See [Git flow](./contribute/github-flow.md).
+- Contribute to zsh-pyenv repositories on [GitHub](https://github.com/luismayta/zsh-pyenv). See [GitHub flow](./contribute/github-flow.md).
 
 ## Getting Started
 
