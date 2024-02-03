@@ -62,3 +62,19 @@ function pyenv::internal::modules::install {
     python -m pip install --user --upgrade "${PYENV_MODULES[@]}"
     message_success "Installed required python modules"
 }
+
+function pyenv::internal::poetry::install {
+    if ! core::exists python; then
+        message_warning "it's necessary have python"
+        return
+    fi
+
+    message_info "Installing poetry"
+    python -m pip install --user --upgrade "poetry"
+    message_success "Installed poetry"
+
+    message_info "Installing plugins poetry"
+    # https://github.com/MousaZeidBaker/poetry-plugin-up
+    poetry self add poetry-plugin-up poetry-plugin-sort poetry-version-plugin
+    message_success "Installed plugins poetry"
+}

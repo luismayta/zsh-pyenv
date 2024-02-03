@@ -35,3 +35,7 @@ function pyenv::post_install {
 function pyenv::load {
     pyenv::internal::pyenv::load
 }
+
+function pyenv::poetry::install {
+    pyenv::internal::poetry::install
+}
