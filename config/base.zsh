@@ -10,8 +10,9 @@ export PYENV_VERSIONS=(
     miniconda3-4.3.30
     3.10.6
     3.11.2
+    3.11.5
 )
-export PYENV_VERSION_GLOBAL=3.11.2
+export PYENV_VERSION_GLOBAL=3.11.7
 export PYENV_MODULES=(
     lastversion
     ansible
