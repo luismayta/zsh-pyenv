@@ -31,4 +31,7 @@ export PYENV_MODULES=(
     voila
 )
 
+# poetry
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 export ZSH_PYENV_LAZY_VIRTUALENV=true
