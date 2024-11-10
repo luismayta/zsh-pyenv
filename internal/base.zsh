@@ -70,7 +70,7 @@ function pyenv::internal::poetry::install {
     fi
 
     message_info "Installing poetry"
-    python -m pip install --user --upgrade "poetry"
+    pipx install "poetry"
     message_success "Installed poetry"
 
     message_info "Installing plugins poetry"
