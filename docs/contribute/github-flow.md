@@ -1,6 +1,6 @@
 <!-- Space: Projects -->
 <!-- Parent: ZshPyenv -->
-<!-- Title: Contributing GithubFlow BaseTemplate -->
+<!-- Title: Contributing GithubFlow ZshPyenv -->
 <!-- Label: BaseTemplate -->
 <!-- Label: Project -->
 <!-- Label: Contributing -->

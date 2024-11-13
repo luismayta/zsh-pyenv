@@ -9,7 +9,7 @@
 
 # Commands
 
-## Pipenv
+## Poetry
 
 ## Taskfile
 
