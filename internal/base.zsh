@@ -75,6 +75,6 @@ function pyenv::internal::poetry::install {
 
     message_info "Installing plugins poetry"
     # https://github.com/MousaZeidBaker/poetry-plugin-up
-    poetry self add poetry-plugin-up poetry-plugin-sort poetry-version-plugin
+    poetry self add poetry-plugin-up poetry-plugin-sort poetry-bumpversion
     message_success "Installed plugins poetry"
 }
